@@ -15,17 +15,18 @@
         type="text"
         v-model="LoginForm.name"
         placeholder="Enter your name"
-      /><br>
+      /><br />
 
       <input
         type="password"
         v-model="LoginForm.password"
         placeholder="Enter your password"
-      /><br>
+      /><br />
 
       <button @click="getLogin">Login</button>
     </div>
   </div>
+<div>  <h1>{{lastName}}</h1></div>
 </template>
 
 <script>
@@ -37,7 +38,16 @@ export default {
         name: null,
         password: null,
       },
+      lastName: "jasjs",
     };
+  },
+  beforeCreate() {
+    this.lastName="Sree"
+    console.log("beforectrae",this.lastName)
+  },
+  created() {
+    //  this.lastName="Sree"
+    console.log("created",this.lastName)
   },
   methods: {
     getLogin() {
